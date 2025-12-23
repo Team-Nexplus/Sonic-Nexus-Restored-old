@@ -1,3 +1,7 @@
+# Archival Notice
+This repo is kept here for archival purposes
+For the new repo, go to [RSDKv2.5](https://github.com/Team-Nexplus/RSDKv2.5)
+
 # Sonic Nexus Restored
 Sonic Nexus 08 decompilation modified for Sonic Nexus Restored
 
