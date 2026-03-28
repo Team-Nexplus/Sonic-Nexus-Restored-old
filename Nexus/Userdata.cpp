@@ -294,11 +294,11 @@ void InitUserdata()
         if (!ini.GetInteger("Controller 1", "C", &inputDevice[INPUT_BUTTONC].contMappings))
             inputDevice[6].contMappings = 6;
         if (!ini.GetInteger("Controller 1", "X", &inputDevice[INPUT_BUTTONX].contMappings))
-            inputDevice[4].contMappings = 7;
+            inputDevice[4].contMappings = 14;
         if (!ini.GetInteger("Controller 1", "Y", &inputDevice[INPUT_BUTTONY].contMappings))
-            inputDevice[5].contMappings = 5;
+            inputDevice[5].contMappings = 8;
         if (!ini.GetInteger("Controller 1", "Z", &inputDevice[INPUT_BUTTONZ].contMappings))
-            inputDevice[6].contMappings = 6;
+            inputDevice[6].contMappings = 15;
         if (!ini.GetInteger("Controller 1", "L", &inputDevice[INPUT_BUTTONL].contMappings))
             inputDevice[5].contMappings = 11;
         if (!ini.GetInteger("Controller 1", "R", &inputDevice[INPUT_BUTTONR].contMappings))
@@ -395,20 +395,6 @@ void writeSettings() {
     ini.SetInteger("Keyboard 1", "Start", inputDevice[INPUT_START].keyMappings);
     ini.SetInteger("Keyboard 1", "Select", inputDevice[INPUT_SELECT].keyMappings);
 
-#if RETRO_USING_SDL2
-    ini.SetComment("Controller 1", "IC1Comment", "Controller Mappings for P1 (Based on: https://wiki.libsdl.org/SDL_GameControllerButton)");
-    ini.SetComment("Controller 1", "IC1Comment2", "Extra buttons can be mapped with the following IDs:");
-    ini.SetComment("Controller 1", "IC1Comment3", "CONTROLLER_BUTTON_ZL             = 16");
-    ini.SetComment("Controller 1", "IC1Comment4", "CONTROLLER_BUTTON_ZR             = 17");
-    ini.SetComment("Controller 1", "IC1Comment5", "CONTROLLER_BUTTON_LSTICK_UP      = 18");
-    ini.SetComment("Controller 1", "IC1Comment6", "CONTROLLER_BUTTON_LSTICK_DOWN    = 19");
-    ini.SetComment("Controller 1", "IC1Comment7", "CONTROLLER_BUTTON_LSTICK_LEFT    = 20");
-    ini.SetComment("Controller 1", "IC1Comment8", "CONTROLLER_BUTTON_LSTICK_RIGHT   = 21");
-    ini.SetComment("Controller 1", "IC1Comment9", "CONTROLLER_BUTTON_RSTICK_UP      = 22");
-    ini.SetComment("Controller 1", "IC1Comment10", "CONTROLLER_BUTTON_RSTICK_DOWN    = 23");
-    ini.SetComment("Controller 1", "IC1Comment11", "CONTROLLER_BUTTON_RSTICK_LEFT    = 24");
-    ini.SetComment("Controller 1", "IC1Comment12", "CONTROLLER_BUTTON_RSTICK_RIGHT   = 25");
-#endif
     ini.SetInteger("Controller 1", "Up", inputDevice[INPUT_UP].contMappings);
     ini.SetInteger("Controller 1", "Down", inputDevice[INPUT_DOWN].contMappings);
     ini.SetInteger("Controller 1", "Left", inputDevice[INPUT_LEFT].contMappings);
@@ -422,6 +408,7 @@ void writeSettings() {
     ini.SetInteger("Controller 1", "L", inputDevice[INPUT_BUTTONL].contMappings);
     ini.SetInteger("Controller 1", "R", inputDevice[INPUT_BUTTONR].contMappings);
     ini.SetInteger("Controller 1", "Start", inputDevice[INPUT_START].contMappings);
+    ini.SetInteger("Controller 1", "Select", inputDevice[INPUT_SELECT].contMappings);
 
     ini.Write(BASE_PATH"settings.ini");
 }
